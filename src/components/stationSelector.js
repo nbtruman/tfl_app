@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 export function StationSelector(props){
     const [stations, setStations] = useState([]);
     const [isStations, setIsStations] = useState(false);
+    const [departure, setDepature] = useState();
+    const [destination, setDestination] = useState();
 
     // fetches an array of all available stations with the lines that serve them.
     useEffect(() => {
@@ -22,25 +24,27 @@ export function StationSelector(props){
         })
     }, []);
 
+
     if(!isStations){
         return <p>Loading...</p>
     }else{
         return(
-            <form>
+            <form onSubmit={props.submit}>
                 <label>
                     Select Departure
-                    <select>
-                        {stations.map((station) =>
-                        <option>{station.commonName}</option>)}
-                    </select>
+                <select onChange={(event) => {setDepature(event.target.value)}}>
+                    {stations.map((station, index) =>
+                    <option key={index} value={station.id}>{station.commonName}</option>)}
+                </select>
                 </label>
                 <label>
-                    Select Destination
-                    <select>
-                        {stations.map((station) =>
-                        <option>{station.commonName}</option>)}
-                    </select>
+                    Select Destination                
+                <select onChange={(event) => {setDestination(event.target.value)}}>
+                    {stations.map((station, index) =>
+                    <option key={index} value={station.id}>{station.commonName}</option>)}
+                </select>
                 </label>
+                <input type="submit"></input>
             </form>
         )
     }
