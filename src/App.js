@@ -10,6 +10,15 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // converts the string state back to an object
+    const stationOne = JSON.parse(departure);
+    const stationTwo = JSON.parse(destination);
+    // extracts the lines as an array of strings
+    const stationOneLines = stationOne.lines.map(line => line.id)
+    const stationTwoLines = stationTwo.lines.map(line => line.id)
+    // compares the two arrays and returns a new array of matched lines
+    const intersection = stationOneLines.filter(element => stationTwoLines.includes(element));
+    console.log(intersection)
   }
 
   const departStation = (event) => {

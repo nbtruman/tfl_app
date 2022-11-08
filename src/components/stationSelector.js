@@ -29,17 +29,19 @@ export function StationSelector(props){
         return(
             <form onSubmit={props.submit}>
                 <label>
-                    Select Departure
+                    
                 <select onChange={props.depart}>
+                    <option value="" disabled selected>Select Departure</option>
                     {stations.map((station, index) =>
-                    <option key={index} value={station.id}>{station.commonName}</option>)}
+                    <option key={index} value={JSON.stringify(station)}>{station.commonName}</option>)}
                 </select>
                 </label>
                 <label>
-                    Select Destination                
+                                    
                 <select onChange={props.arrive}>
+                    <option value="" disabled selected>Select Destination</option>
                     {stations.map((station, index) =>
-                    <option key={index} value={station.id}>{station.commonName}</option>)}
+                    <option key={index} value={JSON.stringify(station)}>{station.commonName}</option>)}
                 </select>
                 </label>
                 <input type="submit"></input>
