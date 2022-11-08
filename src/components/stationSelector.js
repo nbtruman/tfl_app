@@ -15,7 +15,9 @@ export function StationSelector(props){
         const arrayResult = result.stopPoints
         // filters the stations to only include those currently served at least 1 line
         const filteredArray = arrayResult.filter(e => e.lines.length !== 0)
-        setStations(filteredArray);
+        // removes duplicate stations 
+        const removeDuplicates = [...new Map(filteredArray.map((m) => [m.commonName, m])).values()];
+        setStations(removeDuplicates);
         })
     }, []);
 
@@ -26,7 +28,10 @@ export function StationSelector(props){
             <form>
                 <label>
                     Select Departure
-                    <input></input>
+                    <select>
+                        {stations.map((station) =>
+                        <option>{station.commonName}</option>)}
+                    </select>
                 </label>
             </form>
         )
