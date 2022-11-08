@@ -5,16 +5,26 @@ import './App.css';
 
 function App() {
 
+  const [departure, setDepature] = useState(null);
+  const [destination, setDestination] = useState(null);
+
   const handleSubmit = (event) => {
-    console.log(event.target)
     event.preventDefault();
+  }
+
+  const departStation = (event) => {
+    setDepature(event.target.value);
+  }
+
+  const destinationStation = (event) => {
+    setDestination(event.target.value);
   }
 
 
   return (
     <div className="App">
       <h1>TfL App</h1>
-      <StationSelector submit={handleSubmit} />
+      <StationSelector submit={handleSubmit} depart={departStation} arrive={destinationStation}/>
     </div>
   );
 }
