@@ -15,8 +15,7 @@ export function StationSelector(props){
         const arrayResult = result.stopPoints
         // filters the stations to only include those currently served at least 1 line
         const filteredArray = arrayResult.filter(e => e.lines.length !== 0)
-        // removes duplicate stations. This works by using the inner .map() method to create an array of arrays where each sub-array contains the "commonName" of the station and the original object. The new Map method then filters out any duplicate names. .values() turns the array of arrays back into an array of objects. Tutorial can be found at:
-        // https://www.javascripttutorial.net/array/javascript-remove-duplicates-from-array/
+        // removes duplicate stations. This works by using the inner .map() method to create an array of arrays where each sub-array contains the "commonName" of the station and the original object. The new Map method then filters out any duplicate names. .values() turns the array of arrays back into an array of objects.
         const removeDuplicates = [...new Map(filteredArray.map((m) => [m.commonName, m])).values()];
         setStations(removeDuplicates);
         })
@@ -29,17 +28,15 @@ export function StationSelector(props){
         return(
             <form onSubmit={props.submit}>
                 <label>
-                    
+                Select Departure    
                 <select onChange={props.depart}>
-                    <option value="" disabled selected>Select Departure</option>
                     {stations.map((station, index) =>
                     <option key={index} value={JSON.stringify(station)}>{station.commonName}</option>)}
                 </select>
                 </label>
                 <label>
-                                    
+                Select Destination                   
                 <select onChange={props.arrive}>
-                    <option value="" disabled selected>Select Destination</option>
                     {stations.map((station, index) =>
                     <option key={index} value={JSON.stringify(station)}>{station.commonName}</option>)}
                 </select>

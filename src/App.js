@@ -5,8 +5,8 @@ import './App.css';
 
 function App() {
 
-  const [departure, setDepature] = useState(null);
-  const [destination, setDestination] = useState(null);
+  const [departure, setDepature] = useState("null");
+  const [destination, setDestination] = useState("null");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -33,7 +33,9 @@ function App() {
   return (
     <div className="App">
       <h1>TfL App</h1>
-      <StationSelector submit={handleSubmit} depart={departStation} arrive={destinationStation}/>
+      <StationSelector  submit={handleSubmit} 
+                        depart={departStation} 
+                        arrive={destinationStation}/>
     </div>
   );
 }
