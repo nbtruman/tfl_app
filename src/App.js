@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { StationSelector } from './components/stationSelector';
+import { DirectRoutes } from "./components/directRoute";
 import './App.css';
 
 
 function App() {
 
-  const [departure, setDepature] = useState("null");
-  const [destination, setDestination] = useState("null");
+  const [departure, setDepature] = useState(null);
+  const [destination, setDestination] = useState(null);
+  const [isDirect, setIsDirect] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,9 +18,9 @@ function App() {
     // extracts the lines as an array of strings
     const stationOneLines = stationOne.lines.map(line => line.id)
     const stationTwoLines = stationTwo.lines.map(line => line.id)
-    // compares the two arrays and returns a new array of matched lines
-    const intersection = stationOneLines.filter(element => stationTwoLines.includes(element));
-    console.log(intersection)
+    // compares the two arrays and returns a new array of matched lines. Sets the isDirect state to an array.
+    setIsDirect(stationOneLines.filter(element => stationTwoLines.includes(element)))
+
   }
 
   const departStation = (event) => {
@@ -36,6 +38,7 @@ function App() {
       <StationSelector  submit={handleSubmit} 
                         depart={departStation} 
                         arrive={destinationStation}/>
+      {isDirect ? <DirectRoutes directRoutes={isDirect}/> : <div></div>}
     </div>
   );
 }
