@@ -27,16 +27,16 @@ export function StationSelector(props){
     }else{
         return(
             <form onSubmit={props.submit}>
-                <label>
-                Select Departure    
-                <select onChange={props.depart}>
+                <label> 
+                <select onChange={props.depart} value="departure">
+                    <option value="departure" disabled>Select Departure</option>
                     {stations.map((station, index) =>
                     <option key={index} value={JSON.stringify(station)}>{station.commonName}</option>)}
                 </select>
                 </label>
-                <label>
-                Select Destination                   
-                <select onChange={props.arrive}>
+                <label>                
+                <select onChange={props.arrive} value="destination">
+                    <option value="destination" disabled>Select Destination</option>
                     {stations.map((station, index) =>
                     <option key={index} value={JSON.stringify(station)}>{station.commonName}</option>)}
                 </select>
