@@ -28,14 +28,14 @@ export function StationSelector(props){
         return(
             <form onSubmit={props.submit}>
                 <label> 
-                <select onChange={props.depart} value="departure">
+                <select onChange={props.depart} defaultValue="departure">
                     <option value="departure" disabled>Select Departure</option>
                     {stations.map((station, index) =>
                     <option key={index} value={JSON.stringify(station)}>{station.commonName}</option>)}
                 </select>
                 </label>
                 <label>                
-                <select onChange={props.arrive} value="destination">
+                <select onChange={props.arrive} defaultValue="destination">
                     <option value="destination" disabled>Select Destination</option>
                     {stations.map((station, index) =>
                     <option key={index} value={JSON.stringify(station)}>{station.commonName}</option>)}
