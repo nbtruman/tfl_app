@@ -16,8 +16,8 @@ export function DirectRoutes(props) {
     if(props.directRoutes.length){
         return(
         <>
-            <div>{`${tubeLines}`}</div>
-            <div>{`${busRoutes}`}</div>
+            {tubeLines.map((line, index) => <div style={{backgroundColor: `${lineColours[line]}`}}>{`${line}`}</div>)}
+            <div>{`The following direct bus routes are also available: ${busRoutes}`}</div>
         </>)
     }else {
         return <div>There is no direct route</div>
