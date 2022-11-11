@@ -38,7 +38,7 @@ function App() {
       <StationSelector  submit={handleSubmit} 
                         depart={departStation} 
                         arrive={destinationStation}/>
-      {isDirect ? <DirectRoutes directRoutes={isDirect}/> : <div></div>}
+      {isDirect ? <DirectRoutes directRoutes={isDirect} /> : <div></div>}
     </div>
   );
 }
