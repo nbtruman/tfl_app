@@ -1,6 +1,17 @@
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export function DirectRoutes(props) {
+
+    // display the line with a css class property equal to the string value of the line. The css classes will be stored in an object that can be imported in.
+    // display the bus routes.
+    const [ tubeLines, setTubeLines ] = useState([]);
+    const [ busRoutes, setBusRoutes ] = useState([]);
+
+    useEffect(() => {
+        setTubeLines(props.directRoutes.filter(item => item.length >= 6));
+        setBusRoutes(props.directRoutes.filter(item => item.length < 6));
+    }, [props.directRoutes])
+
     if(props.directRoutes.length){
         return <div>{`There is a direct route: ${props.directRoutes}`}</div>
     }else {
