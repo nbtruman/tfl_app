@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {lineColours} from "../resources/lineColours";
 
 export function DirectRoutes(props) {
 
@@ -13,7 +14,11 @@ export function DirectRoutes(props) {
     }, [props.directRoutes])
 
     if(props.directRoutes.length){
-        return <div>{`There is a direct route: ${props.directRoutes}`}</div>
+        return(
+        <>
+            <div>{`${tubeLines}`}</div>
+            <div>{`${busRoutes}`}</div>
+        </>)
     }else {
         return <div>There is no direct route</div>
     }
