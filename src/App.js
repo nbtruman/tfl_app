@@ -7,6 +7,8 @@ import './App.css';
 
 function App() {
 
+  const [submitDeparture, setSubmitDeparture] = useState(null);
+  const [submitDestination, setSubmitDestination] = useState(null);
   const [departure, setDepature] = useState(null);
   const [destination, setDestination] = useState(null);
   const [isDirect, setIsDirect] = useState(null);
@@ -21,14 +23,17 @@ function App() {
     const stationTwoLines = stationTwo.lines.map(line => line.id)
     // compares the two arrays and returns a new array of matched lines. Sets the isDirect state to an array.
     setIsDirect(stationOneLines.filter(element => stationTwoLines.includes(element)))
-
+    setSubmitDeparture(departure);
+    setSubmitDestination(destination);
   }
 
-  const departStation = (event) => {
+  const departStation = (event) => {  
+    setSubmitDeparture(null);  
     setDepature(event.target.value);
   }
 
   const destinationStation = (event) => {
+    setSubmitDestination(null);
     setDestination(event.target.value);
   }
 
@@ -39,8 +44,8 @@ function App() {
       <StationSelector  submit={handleSubmit} 
                         depart={departStation} 
                         arrive={destinationStation}/>
-      {isDirect ? <DirectRoutes directRoutes={isDirect} /> : <div></div>}
-      {isDirect ? <Journey  departure={JSON.parse(departure)}
+      {submitDeparture && submitDestination ? <DirectRoutes directRoutes={isDirect} /> : <div></div>}
+      {submitDeparture && submitDestination ? <Journey  departure={JSON.parse(departure)}
                             destination={JSON.parse(destination)} /> : <div></div>}
     </div>
   );
