@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { StationSelector } from './components/stationSelector';
 import { DirectRoutes } from "./components/directRoute/directRoute";
+import { Journey } from "./components/journey/journey"
 import './App.css';
 
 
@@ -39,6 +40,8 @@ function App() {
                         depart={departStation} 
                         arrive={destinationStation}/>
       {isDirect ? <DirectRoutes directRoutes={isDirect} /> : <div></div>}
+      {isDirect ? <Journey  departure={JSON.parse(departure)}
+                            destination={JSON.parse(destination)} /> : <div></div>}
     </div>
   );
 }
