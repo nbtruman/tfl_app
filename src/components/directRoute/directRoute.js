@@ -3,11 +3,16 @@ import { useState, useEffect } from "react";
 
 export function DirectRoutes(props) {
 
-    const [ line, setLine ] = useState();
+    const [ line, setLine ] = useState([]);
 
     useEffect(() => {
         setLine(props.routes[0].routeOptions[0].name);
-    }, [])
+    }, [props.routes])
 
-    return <p>There is a direct route available on the <span>{line}</span> line.</p>
+    if(props.routes === 1){
+        return <p>There is a direct route available on the <span>{line}</span> line.</p>
+    }else{
+        return <p>Your journey has {props.routes.length - 1} change{props.routes.length === 2 ? "" : "s"}</p>
+    }
+    
 }

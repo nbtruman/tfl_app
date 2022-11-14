@@ -18,24 +18,14 @@ export function Journey(props){
     if(!journey){
         return <p>Loading...</p>
     }
-    if(journey.legs.length === 1){
-        return(            
-            <>
-                <DirectRoutes routes={journey.legs}/>
-                <p>Your total fare will be £{(journey.fare.totalCost / 100).toPrecision(3)}.</p>
-                <p>Your total journey time will be {journey.duration} minutes.</p>
-                {journey.legs.map((leg, index) => <Leg key={index} information={leg}/>
-                )}
-            </>
-        )
-    }else{
-        return(
-            <>
-                <p>Your total fare will be £{(journey.fare.totalCost / 100).toPrecision(3)}.</p>
-                <p>Your total journey time will be {journey.duration} minutes.</p>
-                {journey.legs.map((leg, index) => <Leg key={index} information={leg}/>
-                )}
-            </>
-        )
-    }    
+    return(            
+        <>
+            <DirectRoutes routes={journey.legs}/>
+            <p>Your total fare will be £{(journey.fare.totalCost / 100).toPrecision(3)}.</p>
+            <p>Your total journey time will be {journey.duration} minutes.</p>
+            {journey.legs.map((leg, index) => <Leg key={index} information={leg}/>
+            )}
+        </>
+    )
+    
 }
