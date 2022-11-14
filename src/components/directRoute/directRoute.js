@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import {lineColours} from "../resources/lineColours";
+import {lineColours} from "../../resources/lineColours";
+import "./directRoute.css"
 
 export function DirectRoutes(props) {
 
@@ -15,8 +16,11 @@ export function DirectRoutes(props) {
         return(
         <>
             {/* maps the tube lines to individual divs and displays each one with the correct colour, imported from the lineColours object. */}
-            {tubeLines.map((line, index) => <div key ={index} style={{backgroundColor: `${lineColours[line]}`}}>{`${line}`}</div>)}
-            <div>{`The following direct bus routes are also available: ${busRoutes}`}</div>
+            {tubeLines.map((line, index) => 
+                <div className="line-div" key={index} style={{backgroundColor: `${lineColours[line]}`}}>
+                    <p className="line-p">{`${line}`}</p>
+                </div>)}
+                <div>{`The following direct bus routes are also available: ${busRoutes}`}</div>
         </>)
     }else {
         return <div>There is no direct route</div>

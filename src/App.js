@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { StationSelector } from './components/stationSelector';
-import { DirectRoutes } from "./components/directRoute";
+import { DirectRoutes } from "./components/directRoute/directRoute";
 import './App.css';
 
 
