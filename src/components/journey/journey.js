@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Leg } from "./leg/leg"
 
 export function Journey(props){
 
@@ -19,6 +20,8 @@ export function Journey(props){
             <>
                 <p>Your total fare will be £{(journey.fare.totalCost / 100).toPrecision(3)}.</p>
                 <p>Your total journey time will be {journey.duration} minutes.</p>
+                {journey.legs.map((leg, index) => <Leg key={index} information={leg}/>
+                )}
             </>
         )
     }
