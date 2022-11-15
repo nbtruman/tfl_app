@@ -19,8 +19,19 @@ export function StationSelector(props){
         const removeDuplicates = [...new Map(filteredArray.map((m) => [m.commonName, m])).values()];        
         // removes any stop points that are not underground stations
         const undergroundOnly = removeDuplicates.filter(e => e.commonName.includes("Underground Station"));
+        // sorts stations alphabetically
+        const sortedStations = undergroundOnly.sort((a, b) => {
+            const stationA = a.commonName.toUpperCase();
+            const stationB = b.commonName.toUpperCase();
+            if(stationA < stationB) {
+                return -1;
+            }
+            if(stationA > stationB) {
+                return 1;
+            }
+        });
         // sets the drop down with returned results as an object array of available stop points
-        setStations(undergroundOnly);
+        setStations(sortedStations);
         })
     }, []);
 
