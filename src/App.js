@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StationSelector } from './components/stationSelector';
+import { StationSelector } from './components/stationSelector/stationSelector';
 import { Journey } from "./components/journey/journey"
 import './App.css';
 
@@ -31,7 +31,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>TfL App</h1>
+      <div id="logo-container">
+        <h1>Underground Navigator</h1>
+      </div>      
       <StationSelector  submit={handleSubmit} 
                         depart={departStation} 
                         arrive={destinationStation}/>

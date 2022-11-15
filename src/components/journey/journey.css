@@ -1,20 +1,13 @@
-.line-div {
-    height: 30px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.summary-information {
+    width: 100%;
 }
 
-.line-p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    width: fit-content;
-    height: 20px;
-    padding: 1px 15px;
-    border-radius: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.text-block {
+    padding: 10px 10px;
+    text-align: center;
+    color: white;
+    background-color: RGB(65,75,86);
 }
+
+
+

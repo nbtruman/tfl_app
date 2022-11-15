@@ -1,8 +1,27 @@
 .App {
-  border: 1px solid black;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 50%;
+  min-width: 500px;
+}
+
+#logo-container {
+  background-image: url(./resources/londonUnderground.png);
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo-container h1 {
+  color: white;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 

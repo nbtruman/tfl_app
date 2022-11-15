@@ -1,4 +1,5 @@
 import { lineColours } from "../../../resources/lineColours";
+import "./leg.css"
 
 export function Leg(props){
     return (
