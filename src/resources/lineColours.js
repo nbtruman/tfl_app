@@ -13,5 +13,6 @@ export const lineColours = {
     "dlr": "#00A4A7",
     "overground": "#EE7C0E",
     "elizabeth line": "#9364CD",
-    "london overground": "white"
+    "london overground": "white",
+    "": "white",
 }

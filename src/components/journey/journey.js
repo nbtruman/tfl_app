@@ -21,8 +21,10 @@ export function Journey(props){
     if(!journey.fare){
         return(            
             <>
-                <DirectRoutes routes={journey.legs}/>
-                <p>Your total journey time will be {journey.duration} minutes.</p>
+                <div class="summary-information">
+                    <DirectRoutes routes={journey.legs}/>
+                    <p class="text-block">Your total journey time will be {journey.duration} minutes.</p>
+                </div>
                 {journey.legs.map((leg, index) => <Leg key={index} information={leg}/>
                 )}
             </>
@@ -30,9 +32,11 @@ export function Journey(props){
     }else{
         return(            
             <>
-                <DirectRoutes routes={journey.legs}/>
-                <p>Your total fare will be £{(journey.fare.totalCost / 100).toPrecision(3)}.</p>
-                <p>Your total journey time will be {journey.duration} minutes.</p>
+                <div class="summary-information">
+                    <DirectRoutes routes={journey.legs}/>
+                    <p class="text-block">Your total fare will be £{(journey.fare.totalCost / 100).toPrecision(3)}.</p>
+                    <p class="text-block">Your total journey time will be {journey.duration} minutes.</p>
+                </div>
                 {journey.legs.map((leg, index) => <Leg key={index} information={leg}/>
                 )}
             </>
