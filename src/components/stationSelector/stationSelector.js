@@ -42,16 +42,16 @@ export function StationSelector(props){
         return <p>Loading...</p>
     }else{
         return(
-            <form onSubmit={props.submit} class="selector-form">
+            <form onSubmit={props.submit} className="selector-form">
                 <label> 
-                <select onChange={props.depart} defaultValue="departure" class="selector">
+                <select onChange={props.depart} defaultValue="departure" className="selector">
                     <option value="departure" disabled>Select Departure</option>
                     {stations.map((station, index) =>
                     <option key={index} value={JSON.stringify(station)}>{station.commonName.slice(0, -19)}</option>)}
                 </select>
                 </label>
                 <label>                
-                <select onChange={props.arrive} defaultValue="destination" class="selector">
+                <select onChange={props.arrive} defaultValue="destination" className="selector">
                     <option value="destination" disabled>Select Destination</option>
                     {stations.map((station, index) =>
                     <option key={index} value={JSON.stringify(station)}>{station.commonName.slice(0, -19)}</option>)}
