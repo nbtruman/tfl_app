@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Leg } from "./leg/leg"
 import "./journey.css";
-import { DirectRoutes } from "../directRoute/directRoute";
+import { DirectRoutes } from "./directRoute/directRoute";
 
 export function Journey(props){
 

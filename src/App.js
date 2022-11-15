@@ -33,8 +33,7 @@ function App() {
     <div className="App">
       <div id="logo-container">
         <h1>Underground Navigator</h1>
-      </div>
-      
+      </div>      
       <StationSelector  submit={handleSubmit} 
                         depart={departStation} 
                         arrive={destinationStation}/>
