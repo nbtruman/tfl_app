@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(./resources/london-skyline2.png);
+  background-size: cover;
+  background-position: 100% 40%;
+  background-attachment: fixed;
 }
 
 code {
