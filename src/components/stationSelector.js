@@ -16,8 +16,11 @@ export function StationSelector(props){
         // filters the stations to only include those currently served at least 1 line
         const filteredArray = arrayResult.filter(e => e.lines.length !== 0)
         // removes duplicate stations. This works by using the inner .map() method to create an array of arrays where each sub-array contains the "commonName" of the station and the original object. The new Map method then filters out any duplicate names. .values() turns the array of arrays back into an array of objects.
-        const removeDuplicates = [...new Map(filteredArray.map((m) => [m.commonName, m])).values()];
-        setStations(removeDuplicates);
+        const removeDuplicates = [...new Map(filteredArray.map((m) => [m.commonName, m])).values()];        
+        // removes any stop points that are not underground stations
+        const undergroundOnly = removeDuplicates.filter(e => e.commonName.includes("Underground Station"));
+        // sets the drop down with returned results as an object array of available stop points
+        setStations(undergroundOnly);
         })
     }, []);
 
