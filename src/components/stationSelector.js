@@ -29,6 +29,7 @@ export function StationSelector(props){
             if(stationA > stationB) {
                 return 1;
             }
+            return 0;
         });
         // sets the drop down with returned results as an object array of available stop points
         setStations(sortedStations);
