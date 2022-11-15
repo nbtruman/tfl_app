@@ -31,7 +31,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>TfL App</h1>
+      <div id="logo-container">
+        <h1>Underground Navigator</h1>
+      </div>
+      
       <StationSelector  submit={handleSubmit} 
                         depart={departStation} 
                         arrive={destinationStation}/>
