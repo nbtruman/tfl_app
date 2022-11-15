@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StationSelector } from './components/stationSelector';
+import { StationSelector } from './components/stationSelector/stationSelector';
 import { Journey } from "./components/journey/journey"
 import './App.css';
 
