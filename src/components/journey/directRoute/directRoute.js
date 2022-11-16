@@ -10,9 +10,9 @@ export function DirectRoutes(props) {
     }, [props.routes])
 
     if(props.routes === 1){
-        return <p class="text-block">There is a direct route available on the <span>{line}</span> line.</p>
+        return <p className="text-block">There is a direct route available on the <span>{line}</span> line.</p>
     }else{
-        return <p class="text-block">Your journey has {props.routes.length - 1} change{props.routes.length === 2 ? "" : "s"}</p>
+        return <p className="text-block">Your journey has {props.routes.length - 1} change{props.routes.length === 2 ? "" : "s"}</p>
     }
     
 }
