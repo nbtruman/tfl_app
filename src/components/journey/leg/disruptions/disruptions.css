@@ -1,5 +1,5 @@
 .disruption {
-    width: 50%;
+    width: 90%;
 }
 
 .alert {
@@ -10,5 +10,5 @@
     padding: 10px;
     background-color: white;
     color: RGB(220,36,31);
-    font-size: 1.2vh;
+    font-size: 12px;
 }
