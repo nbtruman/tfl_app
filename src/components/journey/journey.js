@@ -13,7 +13,7 @@ export function Journey(props){
         fetch(`https://api.tfl.gov.uk/journey/journeyresults/${departureCode}/to/${destinationCode}`)
         .then(response => response.json())
         .then(result => setJourney(result.journeys[0]));
-    })
+    }, [props.departure.icsCode, props.destination.icsCode])
 
     if(!journey){
         return <p>Loading...</p>

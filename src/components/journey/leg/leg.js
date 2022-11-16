@@ -24,7 +24,7 @@ export function Leg(props){
                 onClick={toggleHidden}>
             <p className="line-p">{`${props.information.instruction.summary}`}</p>
             <div className={hidden ? "hideDetail" : "showDetail"}>
-                <Path pathArray={path}/>
+                <Path pathArray={path} line={props.information.routeOptions[0].name.toLowerCase()}/>
                 <Disruptions disruptionArray={disruption} />
             </div>            
         </div>
