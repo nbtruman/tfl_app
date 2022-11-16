@@ -22,3 +22,11 @@
     text-align: center;
     letter-spacing: 1px;
 }
+
+.hideDetail {
+    display: none;
+}
+
+.showDetail {
+    display: flex;
+}
