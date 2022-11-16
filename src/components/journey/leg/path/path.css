@@ -1,14 +1,17 @@
 .path {
-    background-color: black;
     width: 250px;
     margin-bottom: 20px;
 }
 
 .stop-point {
     color: white;
+    mix-blend-mode: difference;
+    filter: grayscale(1);
     margin: 0;
     padding: 5px;
     border-left: 3px solid white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .stop-point::before {

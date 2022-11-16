@@ -47,14 +47,14 @@ export function StationSelector(props){
                 <select onChange={props.depart} defaultValue="departure" className="selector">
                     <option value="departure" disabled>Select Departure</option>
                     {stations.map((station, index) =>
-                    <option key={index} value={JSON.stringify(station)}>{station.commonName.slice(0, -19)}</option>)}
+                    <option key={index} value={JSON.stringify(station)}>{station.commonName.replace("Underground Station", "")}</option>)}
                 </select>
                 </label>
                 <label>                
                 <select onChange={props.arrive} defaultValue="destination" className="selector">
                     <option value="destination" disabled>Select Destination</option>
                     {stations.map((station, index) =>
-                    <option key={index} value={JSON.stringify(station)}>{station.commonName.slice(0, -19)}</option>)}
+                    <option key={index} value={JSON.stringify(station)}>{station.commonName.replace("Underground Station", "")}</option>)}
                 </select>
                 </label>
                 <input type="submit" id="submit"></input>
