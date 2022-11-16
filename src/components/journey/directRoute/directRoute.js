@@ -9,10 +9,10 @@ export function DirectRoutes(props) {
         setLine(props.routes[0].routeOptions[0].name);
     }, [props.routes])
 
-    if(props.routes === 1){
-        return <p class="text-block">There is a direct route available on the <span>{line}</span> line.</p>
+    if(props.routes.length === 1){
+        return <p className="text-block">There is a direct route available on the <span>{line}</span> line.</p>
     }else{
-        return <p class="text-block">Your journey has {props.routes.length - 1} change{props.routes.length === 2 ? "" : "s"}</p>
+        return <p className="text-block">Your journey has {props.routes.length - 1} change{props.routes.length === 2 ? "" : "s"}</p>
     }
     
 }
