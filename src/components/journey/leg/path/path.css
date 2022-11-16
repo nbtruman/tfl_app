@@ -1,9 +1,12 @@
 .path {
-    width: 250px;
-    margin-bottom: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .stop-point {
+    width: 200px;
     color: white;
     mix-blend-mode: difference;
     filter: grayscale(1);

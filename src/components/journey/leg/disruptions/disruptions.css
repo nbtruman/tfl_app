@@ -1,4 +1,13 @@
 .disruption {
     width: 50%;
-    /* border: 3px solid RGB(220,36,31); */
+}
+
+.alert {
+    border: none;    
+    border: 3px solid RGB(220,36,31);
+    border-radius: 20px;
+    margin-right: 10%;
+    padding: 10px;
+    background-color: white;
+    color: RGB(220,36,31);
 }
