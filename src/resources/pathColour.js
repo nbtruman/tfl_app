@@ -1,0 +1,18 @@
+export const pathColour = {
+    "bakerloo": "white",
+    "central": "#E32017",
+    "circle": "#FFD300",
+    "district": "#00782A",
+    "hammersmith & city": "#F3A9BB",
+    "jubilee": "#A0A5A9",
+    "metropolitan": "white",
+    "northern": "white",
+    "piccadilly": "white",
+    "victoria": "white",
+    "waterloo & city": "#95CDBA",
+    "dlr": "#00A4A7",
+    "overground": "#EE7C0E",
+    "elizabeth line": "#9364CD",
+    "london overground": "white",
+    "": "white",
+}
