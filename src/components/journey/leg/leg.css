@@ -1,13 +1,15 @@
 .line-div {
     width: 100%;
-    height: 150px;
+    height: fit-content;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: white;
 }
 
 .line-p {
+    font-size: 2vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,4 +21,23 @@
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 1px;
+    border: 1px solid RGB(65,75,86)
+}
+
+.hideDetail {
+    display: none;
+}
+
+.showDetail {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 400px) {
+    .showDetail {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
 }
