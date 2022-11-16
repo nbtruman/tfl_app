@@ -57,7 +57,7 @@ export function StationSelector(props){
                     <option key={index} value={JSON.stringify(station)}>{station.commonName.replace("Underground Station", "")}</option>)}
                 </select>
                 </label>
-                <input type="submit" id="submit"></input>
+                <input type="submit" id="submit" value="submit"></input>
             </form>
         )
     }
