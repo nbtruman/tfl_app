@@ -9,6 +9,7 @@
 }
 
 .line-p {
+    font-size: 2vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,6 +30,14 @@
 
 .showDetail {
     display: flex;
+    justify-content: center;
     width: 100%;
     margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 400px) {
+    .showDetail {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
 }

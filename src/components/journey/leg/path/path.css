@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid black;
 }
 
 .stop-point {
@@ -11,10 +12,11 @@
     mix-blend-mode: difference;
     filter: grayscale(1);
     margin: 0;
-    padding: 5px;
+    padding: 5px 0px;
     border-left: 3px solid white;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-size: 1.2vh;
 }
 
 .stop-point::before {
