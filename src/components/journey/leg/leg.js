@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
 import {Path} from "./path/path";
+import { Disruptions } from "./disruptions/disruptions";
 import { lineColours } from "../../../resources/lineColours";
 import "./leg.css"
 
 export function Leg(props){
     const [ path, setPath ] = useState();
-    const [ hidden, setHidden ] = useState(true)
+    const [ disruption, setDisruption ] = useState();
+    const [ hidden, setHidden ] = useState(true);
 
     useEffect(() => {
-        setPath(props.information.path.stopPoints)
-    }, [props.information.path.stopPoints])
+        setPath(props.information.path.stopPoints);
+        setDisruption(props.information.disruptions);
+    }, [props.information.path.stopPoints, props.information.disruptions]);
 
     const toggleHidden = () => {
         setHidden(!hidden);
@@ -22,7 +25,8 @@ export function Leg(props){
             <p className="line-p">{`${props.information.instruction.summary}`}</p>
             <div className={hidden ? "hideDetail" : "showDetail"}>
                 <Path pathArray={path}/>
+                <Disruptions disruptionArray={disruption} />
             </div>            
         </div>
-    )
-}
+    );
+};
