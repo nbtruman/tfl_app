@@ -13,6 +13,6 @@ export const pathColour = {
     "dlr": "white",
     "overground": "white",
     "elizabeth line": "white",
-    "london overground": "white",
+    "london overground": "black",
     "": "black",
 }
